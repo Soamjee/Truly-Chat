@@ -1,10 +1,10 @@
 import { Request, RequestHandler, Response } from 'express'
-import { User } from '../models/user.model'
-import { logIn, signUp } from '../lib/zodAuth'
+import { User } from '../models/user.model.js'
+import { logIn, signUp } from '../lib/zodAuth.js'
 import bcrypt from "bcryptjs";
-import { jwtTokenGenerate } from '../lib/utils';
-import { DecodeValue } from '../middleware/auth.middleware';
-import cloudinary from '../lib/cloudinary';
+import { jwtTokenGenerate } from '../lib/utils.js';
+import { DecodeValue } from '../middleware/auth.middleware.js';
+import cloudinary from '../lib/cloudinary.js';
 
 export const SignUp = async (req: Request, res: Response) => {
     const signInDetails = req.body

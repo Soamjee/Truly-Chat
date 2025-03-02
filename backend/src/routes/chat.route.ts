@@ -1,6 +1,6 @@
 import express from 'express'
-import { GetAllChats, GetAllUsers, SendMessage } from '../controllers/chat.controller'
-import { authenticatedRoute } from '../middleware/auth.middleware'
+import { GetAllChats, GetAllUsers, SendMessage } from '../controllers/chat.controller.js'
+import { authenticatedRoute } from '../middleware/auth.middleware.js'
 
 const router = express()
 

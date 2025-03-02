@@ -2,10 +2,10 @@ import http from 'http'
 import { Server } from 'socket.io'
 import express from 'express'
 
-const app = express()
-const server = http.createServer(app)
+export const app = express()
+export const server = http.createServer(app)
 
-const io = new Server(server, {
+export const io = new Server(server, {
     cors: {
         origin: ['http://localhost:5173']
     }
@@ -13,7 +13,7 @@ const io = new Server(server, {
 
 const onlineUsers: Record<string, string> = {}
 
-const getReceiverSocketId = (userId : string) => {
+export const getReceiverSocketId = (userId : string) => {
     return onlineUsers[userId]
 }
 
@@ -33,5 +33,3 @@ io.on('connection', (socket)=>{
         io.emit("getOnlineUsers", Object.keys(onlineUsers))
     })
 })
-
-export {app, server, getReceiverSocketId, io}

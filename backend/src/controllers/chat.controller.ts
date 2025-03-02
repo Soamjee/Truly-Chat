@@ -1,10 +1,10 @@
 import { Request, Response } from "express"
-import { User } from "../models/user.model"
-import { DecodeValue } from "../middleware/auth.middleware"
-import { Chat } from "../models/chat.model"
-import cloudinary from "../lib/cloudinary"
+import { User } from "../models/user.model.js"
+import { DecodeValue } from "../middleware/auth.middleware.js"
+import { Chat } from "../models/chat.model.js"
+import cloudinary from "../lib/cloudinary.js"
 import mongoose from "mongoose"
-import { getReceiverSocketId, io } from "../lib/socket"
+import { getReceiverSocketId, io } from "../lib/socket.js"
 
 export const GetAllUsers = async (req: Request, res: Response) => {
     try {
